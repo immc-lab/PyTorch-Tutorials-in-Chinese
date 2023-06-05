@@ -1,21 +1,21 @@
 """
-`Learn the Basics <intro.html>`_ ||
-`Quickstart <quickstart_tutorial.html>`_ ||
-**Tensors** ||
-`Datasets & DataLoaders <data_tutorial.html>`_ ||
-`Transforms <transforms_tutorial.html>`_ ||
-`Build Model <buildmodel_tutorial.html>`_ ||
-`Autograd <autogradqs_tutorial.html>`_ ||
-`Optimization <optimization_tutorial.html>`_ ||
-`Save & Load Model <saveloadrun_tutorial.html>`_
+`学习基础知识 <intro.html>`_ ||
+`快速开始 <quickstart_tutorial.html>`_ ||
+`张量 <tensorqs_tutorial.html>`_ ||
+`数据集和数据加载器 <data_tutorial.html>`_ ||
+`变换  <transforms_tutorial.html>`_ ||
+`创建模型 <buildmodel_tutorial.html>`_ ||
+**自动求导** ||
+`优化 <optimization_tutorial.html>`_ ||
+`保存和加载模型 <saveloadrun_tutorial.html>`_
 
-Tensors
+张量
 ==========================
 
 张量是一种特定的数据结构，与数组和矩阵非常相似。在PyTorch中，我们使用张量来编码一个模型的输入和输出，以及模型的参数。
 
-张量与`NumPy<https://numpy.org/>`_的ndarrays类似，只是张量可以在GPU或其他硬件加速器上运行。事实上，张量和NumPy数组通常可以共享相同的底层内存,
-不需要复制数据（见 :ref:`bridge-to-np-label`）。张量还为自动求导进行了优化（我们将在后面的`Autograd <autogradqs_tutorial.html>`__部分看到更多关于这一点）。
+张量与`NumPy<https://numpy.org/>`_的ndarrays类似，只是张量可以在GPU或其他硬件加速器上运行。事实上，张量和NumPy数组通常可以共享相同的底层内存，
+不需要复制数据（见 :ref:`bridge-to-np-label`）。张量还为自动求导进行了优化（我们将在后面的`自动微分 <autogradqs_tutorial.html>`__部分看到更多关于这一点）。
 如果你熟悉ndarrays，你就会对张量API的很熟悉。如果不熟悉，请跟上!
 """
 
