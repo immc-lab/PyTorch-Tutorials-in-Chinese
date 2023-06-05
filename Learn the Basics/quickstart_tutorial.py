@@ -1,23 +1,23 @@
 """
-`Learn the Basics <intro.html>`_ ||
-**Quickstart** ||
-`Tensors <tensorqs_tutorial.html>`_ ||
-`Datasets & DataLoaders <data_tutorial.html>`_ ||
-`Transforms <transforms_tutorial.html>`_ ||
-`Build Model <buildmodel_tutorial.html>`_ ||
-`Autograd <autogradqs_tutorial.html>`_ ||
-`Optimization <optimization_tutorial.html>`_ ||
-`Save & Load Model <saveloadrun_tutorial.html>`_
+`学习基础知识 <intro.html>`_ ||
+`快速开始 <quickstart_tutorial.html>`_ ||
+`张量 <tensorqs_tutorial.html>`_ ||
+`数据集和数据加载器 <data_tutorial.html>`_ ||
+`变换  <transforms_tutorial.html>`_ ||
+`创建模型 <buildmodel_tutorial.html>`_ ||
+**自动求导** ||
+`优化 <optimization_tutorial.html>`_ ||
+`保存和加载模型 <saveloadrun_tutorial.html>`_
 
-Quickstart
+快速开始
 ===================
 本节介绍了机器学习中常见任务的API。请参考每一节中的链接来深入了解。
 
 与数据一起工作
 -----------------
 PyTorch有两个`处理数据的原语 <https://pytorch.org/docs/stable/data.html>`_:
-``torch.utils.data.DataLoader`` 和 ``torch.utils.data.Dataset``。
-``Dataset``存储样本和它们相应的标签。 ``DataLoader``在``Dataset``周围包装了一个可迭代的东西.
+``torch.utils.data.DataLoader`` 和 ``torch.utils.data.Dataset`` 。
+``Dataset`` 存储样本和它们相应的标签。 ``DataLoader`` 在 ``Dataset`` 周围包装了一个可迭代的东西.
 
 """
 
@@ -30,12 +30,12 @@ from torchvision.transforms import ToTensor
 ######################################################################
 # PyTorch提供了特定领域的库，如`TorchText <https://pytorch.org/text/stable/index.html>`_、
 # `TorchVision <https://pytorch.org/vision/stable/index.html>`_、
-# 和 `TorchAudio <https://pytorch.org/audio/stable/index.html>`_,
+# 和 `TorchAudio <https://pytorch.org/audio/stable/index.html>`_，
 # 所有这些都包括数据集。 在本教程中，我们将使用一个TorchVision数据集。
 #
 # ``torchvision.datasets`` 模块包含许多现实世界视觉数据的`Dataset`对象，如CIFAR，COCO
 # (`full list here <https://pytorch.org/vision/stable/datasets.html>`_)。在本教程中，我们使用FashionMNIST数据集。
-# 每个TorchVision``Dataset``包括两个参数： ``transform``和 ``target_transform``,这两个参数分别用来修改样本和标签。
+# 每个TorchVision ``Dataset`` 包括两个参数： ``transform`` 和 ``target_transform`` ，这两个参数分别用来修改样本和标签。
 
 # 从开放数据集下载训练数据。
 training_data = datasets.FashionMNIST(
@@ -54,7 +54,7 @@ test_data = datasets.FashionMNIST(
 )
 
 ######################################################################
-# 我们将``Dataset``作为参数传递给``DataLoader``。这在我们的数据集上包裹了一个可迭代的数据集，
+# 我们将 ``Dataset`` 作为参数传递给 ``DataLoader`` 。这在我们的数据集上包裹了一个可迭代的数据集，
 # 并支持自动批处理、采样、洗牌和多进程数据加载。这里我们定义了一个64的批处理量，也就是说，每个元素都将返回64个特征和标签的批次。
 
 batch_size = 64
@@ -80,8 +80,8 @@ for X, y in test_dataloader:
 # 创建模型
 # ------------------
 # 为了在PyTorch中定义一个神经网络，我们创建一个继承自`nn.Module <https://pytorch.org/docs/stable/generated/torch.nn.Module.html>`_
-# 的类。我们在``__init__`` 函数中定义网络的层，并在``forward``函数中指定数据如何通过网络。
-# 为了加速 为了加速神经网络的操作，我们将其移至GPU或MPS（如果有的话）。
+# 的类。我们在 ``__init__`` 函数中定义网络的层，并在 ``forward`` 函数中指定数据如何通过网络。
+# 为了加速神经网络的操作，我们将其移至GPU或MPS（如果有的话）。
 
 # 获取cpu、gpu或mps设备进行培训。
 device = (
@@ -175,7 +175,7 @@ def test(dataloader, model, loss_fn):
     print(f"Test Error: \n Accuracy: {(100*correct):>0.1f}%, Avg loss: {test_loss:>8f} \n")
 
 ##############################################################################
-# 训练过程是通过几个迭代(*epochs*)进行的。在每个历时中，模型学习参数以做出更好的预测。
+# 训练过程是通过几个迭代(*历时*)进行的。在每个历时中，模型学习参数以做出更好的预测。
 # 我们在每个历时中打印模型的准确性和损失；我们希望准确率增加，损失减少。
 
 epochs = 5
