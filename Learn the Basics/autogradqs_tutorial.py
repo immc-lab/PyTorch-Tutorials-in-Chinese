@@ -53,7 +53,7 @@ loss = torch.nn.functional.binary_cross_entropy_with_logits(z, y)
 # 我们应用张量来构建计算图的函数
 # 实际上是 ``Function`` 类的对一个对象。 这个对象知道如何
 # 在 *forward* 方向上计算该函数， 并且知道如何在
-# 整个 *backward propagation* 步骤中计算其导数. 对
+# 整个 *反向传播* 步骤中计算其导数. 对
 # 后向传播函数的参考被存储在一个张量的 ``grad_fn`` 属性中。
 #  你能找到更多关于 ``Function``的信息通过查阅
 # 文档 <https://pytorch.org/docs/stable/autograd.html#function>`__.
