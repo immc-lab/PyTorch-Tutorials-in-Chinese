@@ -13,7 +13,7 @@
 ===================
 
 神经网络由对数据进行操作的层/模块组成。
- `torch.nn <https://pytorch.org/docs/stable/nn.html>`_ 命名空间提供了您构建自己的神经网络所需的所有构建模块。 PyTorch中的每个模块都继承了 nn.Module `nn.Module <https://pytorch.org/docs/stable/generated/torch.nn.Module.html>`_.
+ `torch.nn <https://pytorch.org/docs/stable/nn.html>`_ 命名空间提供了您构建自己的神经网络所需的所有构建模块。 PyTorch中的每个模块都继承了  `nn.Module <https://pytorch.org/docs/stable/generated/torch.nn.Module.html>`_.
 一个神经网络本身就是一个由其他模块（层）组成的模块。这种嵌套结构允许轻松构建和管理复杂的架构。
 
 在下面的章节中，我们将建立一个神经网络来对FashionMNIST数据集中的图像进行分类。
@@ -99,8 +99,7 @@ print(f"Predicted class: {y_pred}")
 # -------------------------
 #
 # 让我们来分解FashionMNIST模型中的各个层次。为了说明它，我们
-# 将采取一个由3张大小为28x28的图像组成的样本小批量看看发生了什么 当
-# 我们把它通过网络时
+# 将采取一个由3张大小为28x28的图像组成的样本小批量把它通过网络时看看发生了什么。
 
 input_image = torch.rand(3,28,28)
 print(input_image.size())
@@ -109,7 +108,7 @@ print(input_image.size())
 # nn.Flatten
 # ^^^^^^^^^^^^^^^^^^^^^^
 # 我们初始化 `nn.Flatten  <https://pytorch.org/docs/stable/generated/torch.nn.Flatten.html>`_
-# 层去转换每个2D的28*28的图片为一个包含784个像素值的连续数组  (
+# 层去转换每个2D的28*28的图片变成一个包含784个像素值的连续数组  (
 # 小批量维度 (维度=0)保持原来的数值).
 
 flatten = nn.Flatten()
@@ -147,7 +146,7 @@ print(f"After ReLU: {hidden1}")
 # nn.Sequential
 # ^^^^^^^^^^^^^^^^^^^^^^
 # `nn.Sequential <https://pytorch.org/docs/stable/generated/torch.nn.Sequential.html>`_ 是一个包含多个模块的有序容器
-#  数据通过所有的模块按照定义好的顺序。你可以使用
+# 数据通过所有的模块按照定义好的顺序。你可以使用
 # 序列容器来拼凑一个快速的网络，例如 ``seq_modules``.
 
 seq_modules = nn.Sequential(
@@ -164,7 +163,7 @@ logits = seq_modules(input_image)
 # ^^^^^^^^^^^^^^^^^^^^^^
 # 神经网络的最后一个线性层返回 `logits` - 原始数值在 [-\负无穷, \无穷] 里- 这将传递给
 # `nn.Softmax <https://pytorch.org/docs/stable/generated/torch.nn.Softmax.html>`_ 模块。结果被缩放到数值
-# [0, 1] 之间表示模型对于每个类的预测概率。 ``dim``这个参数表示维度的数值必须和为1。
+# [0, 1] 之间表示模型对于每个类的预测概率。 ``dim`` 这个参数表示维度的数值必须和为1。
 
 softmax = nn.Softmax(dim=1)
 pred_probab = softmax(logits)
@@ -173,8 +172,8 @@ pred_probab = softmax(logits)
 #################################################
 # 模型参数
 # -------------------------
-# 神经网络内部的许多层都是参数化的，即有相关的权重和偏差，在训练过程中被优化。
-# 自动继承``nn.Module`` 类。
+# 神经网络内部的许多层都是参数化的，即有相关的权重和偏差，在训练过程中被优化，
+# 自动继承 ``nn.Module`` 类。
 # 追踪你的模型对象中定义的所有字段，并使所有的参数
 # 是可获得的 ，使用模型的 ``parameters()``方法或者 ``named_parameters()`` 方法。
 #
