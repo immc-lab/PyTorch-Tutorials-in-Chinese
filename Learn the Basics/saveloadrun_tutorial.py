@@ -1,12 +1,12 @@
 """
-`Learn the Basics <intro.html>`_ ||
-`Quickstart <quickstart_tutorial.html>`_ ||
-`Tensors <tensorqs_tutorial.html>`_ ||
-`Datasets & DataLoaders <data_tutorial.html>`_ ||
-`Transforms <transforms_tutorial.html>`_ ||
-`Build Model <buildmodel_tutorial.html>`_ ||
-`Autograd <autogradqs_tutorial.html>`_ ||
-`Optimization <optimization_tutorial.html>`_ ||
+`学习基础知识 <intro.html>`_ ||
+`快速开始 <quickstart_tutorial.html>`_ ||
+`张量 <tensorqs_tutorial.html>`_ ||
+`数据集和数据加载器 <data_tutorial.html>`_ ||
+`变换  <transforms_tutorial.html>`_ ||
+**创建模型** ||
+`自动求导 <autogradqs_tutorial.html>`_ ||
+`优化 <optimization_tutorial.html>`_ ||
 **Save & Load Model**
 
 保存和加载模型
@@ -53,7 +53,7 @@ torch.save(model, 'model.pth')
 model = torch.load('model.pth')
 
 ########################
-# .. note:: 这种方法在序列化模型时使用Python [pickle](https://docs.python.org/3/library/pickle.html)模块，因此在加载模型时它依赖于可用的实际类定义。
+# .. note:: 这种方法在序列化模型时使用Python `pickle <https://docs.python.org/3/library/pickle.html>`_ 模块，因此在加载模型时它依赖于可用的实际类定义。
 
 #######################
 # 相关教程

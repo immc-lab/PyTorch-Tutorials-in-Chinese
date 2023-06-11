@@ -1,13 +1,13 @@
 """
-`Learn the Basics <intro.html>`_ ||
-`Quickstart <quickstart_tutorial.html>`_ ||
-`Tensors <tensorqs_tutorial.html>`_ ||
-`Datasets & DataLoaders <data_tutorial.html>`_ ||
-`Transforms <transforms_tutorial.html>`_ ||
-`Build Model <buildmodel_tutorial.html>`_ ||
-`Autograd <autogradqs_tutorial.html>`_ ||
-**Optimization** ||
-`Save & Load Model <saveloadrun_tutorial.html>`_
+`学习基础知识 <intro.html>`_ ||
+`快速开始 <quickstart_tutorial.html>`_ ||
+`张量 <tensorqs_tutorial.html>`_ ||
+`数据集和数据加载器 <data_tutorial.html>`_ ||
+`变换  <transforms_tutorial.html>`_ ||
+**创建模型** ||
+`自动求导 <autogradqs_tutorial.html>`_ ||
+`优化 <optimization_tutorial.html>`_ ||
+`保存和加载模型 <saveloadrun_tutorial.html>`_
 
 优化模型参数
 ===========================
@@ -19,7 +19,7 @@
 
 之前的代码
 -----------------
-我们从之前的数据集&数据加载器和建立模型章节中加载代码。
+我们从之前的 `数据集&数据加载器 <data_tutorial.html>`_ 和 `建立模型 <buildmodel_tutorial.html>`_ 章节中加载代码。
 """
 
 import torch
@@ -70,7 +70,7 @@ model = NeuralNetwork()
 # -----------------
 #
 # 超参数是让你控制模型优化过程的可调参数。不同的超参数值可能会影响模型的训练和收敛率
-# （[阅读更多](https://pytorch.org/tutorials/beginner/hyperparameter_tuning_tutorial.html)有关超参数调整的内容）。
+# (`阅读更多 <https://pytorch.org/tutorials/beginner/hyperparameter_tuning_tutorial.html>`__ 关于超参数调整)
 
 # 我们定义了如下的超参数用于训练：
 # - **Number of Epoch（世代数）** 迭代数据集的次数
@@ -94,7 +94,7 @@ epochs = 5
 # - **验证/测试循环** - 迭代测试集并查看模型性能是否有所提升。
 
 # 让我们简单地熟悉一下训练循环中使用的一些概念。
-# 在这里看看优化循环的[完整实现](https://pytorch.org/tutorials/beginner/basics/optimization_tutorial.html#full-impl-label)。
+# 在这里看看优化循环的:ref:`full-impl-label`。
 
 #
 # 损失函数
@@ -104,11 +104,11 @@ epochs = 5
 # **损失函数(Loss funcation)** 衡量的是模型输出的结果与目标值的不相似程度，它是我们在训练期间想要最小化的损失函数。
 # 为了计算损失，我们使用给定数据样本的输入进行预测，并与真实数据标签值进行比较。
 
-# 常用的损失函数包括回归任务的[nn.MSELoss](https://pytorch.org/docs/stable/generated/torch.nn.MSELoss.html#torch.nn.MSELoss)(均方误差)，
-# 分类任务的[nn.NLLLoss](https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html#torch.nn.NLLLoss)(负对数似然)。
-# [nn.CrossEntropyLoss](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html#torch.nn.CrossEntropyLoss)结合了`nn.LogSoftmax`和`nn.NLLLoss`。
+# 常用的损失函数包括回归任务的 `nn.MSELoss <https://pytorch.org/docs/stable/generated/torch.nn.MSELoss.html#torch.nn.MSELoss>`_ (均方误差)，
+# 分类任务的 `nn.NLLLoss <https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html#torch.nn.NLLLoss>`_ (负对数似然)。
+# `nn.CrossEntropyLoss <https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html#torch.nn.CrossEntropyLoss>`_ 结合了 ``nn.LogSoftmax`` 和 ``nn.NLLLoss``。
 
-# 我们将模型的输出对数传递给`nn.CrossEntropyLoss`，它将对对数进行归一化处理并计算预测误差。
+# 我们将模型的输出对数传递给 ``nn.CrossEntropyLoss``，它将对对数进行归一化处理并计算预测误差。
 
 
 # 初始化损失函数
@@ -121,8 +121,8 @@ loss_fn = nn.CrossEntropyLoss()
 # ~~~~~~~~~~~~~~~~~
 #
 # 优化是在每一步训练中调节模型参数以减少模型误差的过程。**优化算法** 定义了这个过程如何被执行（在这个例子中我们使用了随机梯度下降）。
-# 所有的优化逻辑都被封装在优化器对象中。在这里，我们使用SGD优化器；
-# 此外，PyTorch中还有许多[不同的优化器](https://pytorch.org/docs/stable/optim.html)，如ADAM和RMSProp，它们对不同类型的模型和数据有更好的效果。
+# 所有的优化逻辑都被封装在优化器对象中。在这里，我们使用SGD优化器；此外，PyTorch中还有许多 `不同优化器 <https://pytorch.org/docs/stable/optim.html>`_，
+# 如ADAM和RMSProp，它们对不同类型的模型和数据有更好的效果。
 
 # 我们通过注册需要训练的模型参数来初始化优化器，并传入学习率超参数。
 
