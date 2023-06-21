@@ -1,6 +1,6 @@
 """
-**简介** ||
-`张量 <tensors_deeper_tutorial.html>`_ ||
+`简介 <introyt1_tutorial.html>`_ ||
+**张量** ||
 `自动求导 <autogradyt_tutorial.html>`_ ||
 `创建模型 <modelsyt_tutorial.html>`_ ||
 `TensorBoard支持 <tensorboardyt_tutorial.html>`_ ||
