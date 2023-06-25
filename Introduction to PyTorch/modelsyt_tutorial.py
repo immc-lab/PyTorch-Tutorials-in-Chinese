@@ -1,13 +1,14 @@
 """
-`Introduction <introyt1_tutorial.html>`_ ||
-`Tensors <tensors_deeper_tutorial.html>`_ ||
-`Autograd <autogradyt_tutorial.html>`_ ||
-**Building Models** ||
-`TensorBoard Support <tensorboardyt_tutorial.html>`_ ||
-`Training Models <trainingyt.html>`_ ||
-`Model Understanding <captumyt.html>`_
+`简介 <introyt1_tutorial.html>`_ ||
+`张量 <tensors_deeper_tutorial.html>`_ ||
+`自动求导 <autogradyt_tutorial.html>`_ ||
+**创建模型** ||
+`TensorBoard 支持 <tensorboardyt_tutorial.html>`_ ||
+`训练模型 <trainingyt.html>`_ ||
+`理解模型 <captumyt.html>`_
 
-Building Models with PyTorch
+
+使用PyTorch创建模型
 ============================
 
 本节课可以在youtube上观看。 `youtube <https://www.youtube.com/watch?v=OSqIP-mOWOI>`__.
@@ -77,10 +78,10 @@ for param in tinymodel.linear2.parameters():
 # 这显示了PyTorch模型的基本结构：有一个 ``__init__()`` 方法来定义模型的层和其他组件，还有一个 ``forward()`` 方法来完成计算。
 # 请注意，我们可以打印该模型或其任何子模块，以了解其结构。
 # 
-# Common Layer Types
+# 公共层
 # ------------------
 # 
-# Linear Layers
+# 线性层
 # ~~~~~~~~~~~~~
 #
 # 最基本的神经网络层类型是 *线性* 或 *全连接层* 。
@@ -112,7 +113,7 @@ print(y)
 # 线性层在深度学习模型中被广泛使用。
 # 你最常看到它们的地方之一是在分类器模型中，通常会在最后有一个或多个线性层，其中最后一层会有 *n* 个输出，其中 *n* 是分类器处理的类别数量。
 # 
-# Convolutional Layers
+# 卷积层
 # ~~~~~~~~~~~~~~~~~~~~
 #
 # *卷积层* 是为了处理具有高度空间相关性的数据而建立的。
@@ -183,7 +184,7 @@ class LeNet(nn.Module):
 # 有用于处理一维、二维和三维张量的卷积层。卷积层构造函数还有很多可选参数，包括输入中的步长（stride）长度（例如，每二个或每三个位置扫描一次）、填充（以便你可以扫描到输入的边缘）等等。
 # 更多信息请参见`文档 <https://pytorch.org/docs/stable/nn.html#convolution-layers>`__。
 # 
-# Recurrent Layers
+#  循环网络层
 # ~~~~~~~~~~~~~~~~
 #
 # *循环神经网络*（或称 *RNN）* 用于处理顺序数据--从科学仪器的时间序列测量到自然语言句子到DNA核苷酸的任何东西。
@@ -303,7 +304,7 @@ print(dropout(my_tensor))
 # 上面，你可以看到dropout对样本张量的影响。你可以使用可选的 ``p`` 参数来设置单个权重被丢弃的概率；
 # 如果你不指定，则默认为0.5。
 # 
-# Activation Functions
+# 激活函数
 # ~~~~~~~~~~~~~~~~~~~~
 #
 # 激活函数使深度学习成为可能。一个神经网络实际上是一个有许多参数的程序，用来 *模拟一个数学函数* 。
@@ -314,7 +315,7 @@ print(dropout(my_tensor))
 # ``torch.nn.Module`` 有封装所有主要激活函数的对象，包括ReLU及其许多变体、Tanh、Hardtanh、sigmoid等。
 # 它还包括其他函数，如Softmax，这些函数在模型的输出阶段最为有用。
 # 
-# Loss Functions
+# 损失函数
 # ~~~~~~~~~~~~~~
 #
 # 损失函数告诉我们一个模型的预测离正确答案有多远。
