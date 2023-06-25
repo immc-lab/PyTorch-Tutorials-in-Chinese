@@ -1,13 +1,14 @@
 """
-`Introduction <introyt1_tutorial.html>`_ ||
-`Tensors <tensors_deeper_tutorial.html>`_ ||
-**Autograd** ||
-`Building Models <modelsyt_tutorial.html>`_ ||
-`TensorBoard Support <tensorboardyt_tutorial.html>`_ ||
-`Training Models <trainingyt.html>`_ ||
-`Model Understanding <captumyt.html>`_
+`简介<introyt1_tutorial.html>`_ ||
+`张量 <tensors_deeper_tutorial.html>`_ ||
+**自动求导** ||
+`创建模型 <modelsyt_tutorial.html>`_ ||
+`TensorBoard支持 <tensorboardyt_tutorial.html>`_ ||
+`训练模型 <trainingyt.html>`_ ||
+`理解模型 <captumyt.html>`_
 
-The Fundamentals of Autograd
+
+自动求导的基础
 ============================
 
 本节课可以仔 `youtube <https://www.youtube.com/watch?v=M0fX15_-xrY>`__上观看
@@ -66,7 +67,7 @@ What Do We Need Autograd For?
 # 这就是自动求导介入的地方，它会追踪每一个计算的历史。PyTorch模型中的每个计算张量都带有其输入张量和用于创建张量的函数的历史。
 # 再加上旨在作用于张量的PyTorch函数都有一个内置的实现来计算自己的导数，这大大加快了学习所需的局部导数的计算。
 #
-# A Simple Example
+# 一个简单的例子
 # ----------------
 #
 # 上面是一些理论，但是在实践中使用自动求导是什么样的呢？
@@ -376,7 +377,7 @@ print(y)
 #
 
 #########################################################################
-# Autograd Profiler
+# 自动求导配置
 # -----------------
 # 自动求导详细地跟踪你的每一步计算。
 # 这样的计算历史，结合时间信息，将成为一个方便的剖析器--而自动求导已经将这个功能内置于其中。
