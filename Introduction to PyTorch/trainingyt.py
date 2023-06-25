@@ -1,13 +1,14 @@
 """
-`Introduction <introyt1_tutorial.html>`_ ||
-`Tensors <tensors_deeper_tutorial.html>`_ ||
-`Autograd <autogradyt_tutorial.html>`_ ||
-`Building Models <modelsyt_tutorial.html>`_ ||
-`TensorBoard Support <tensorboardyt_tutorial.html>`_ ||
-**Training Models** ||
-`Model Understanding <captumyt.html>`_
+`简介 <introyt1_tutorial.html>`_ ||
+`张量 <tensors_deeper_tutorial.html>`_ ||
+`自动求导 <autogradyt_tutorial.html>`_ ||
+`创建模型 <modelsyt_tutorial.html>`_ ||
+`TensorBoard 支持 <tensorboardyt_tutorial.html>`_ ||
+**训练模型** ||
+`理解模型 <captumyt.html>`_
 
-Training with PyTorch
+
+使用PyTorch训练
 =====================
 
 本节课可以在 `youtube <https://www.youtube.com/watch?v=jF43_wj_DCQ>`__ 上观看。
@@ -18,7 +19,7 @@ Training with PyTorch
      <iframe width="560" height="315" src="https://www.youtube.com/embed/jF43_wj_DCQ" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    </div>
 
-Introduction
+介绍
 ------------
 
 在过去的视频中，我们已经讨论并演示了：
@@ -36,7 +37,7 @@ Introduction
 最后，我们将把所有这些放在一起，看看一个完整的PyTorch训练的运行情况。
 
 
-Dataset and DataLoader
+数据集和数据加载器
 ----------------------
  
  ``Dataset`` 和 ``DataLoader`` 类封装了从存储中提取数据并将其分批给训练循环的过程。
@@ -109,7 +110,7 @@ print('  '.join(classes[labels[j]] for j in range(4)))
 
 
 #########################################################################
-# The Model
+# 模型
 # ---------
 # 
 # 我们在这个例子中使用的模型是LeNet-5的一个变种--如果你看过这个系列的前几个视频，应该对它很熟悉。
@@ -166,7 +167,7 @@ loss = loss_fn(dummy_outputs, dummy_labels)
 print('这一批次的总损失： {}'.format(loss.item()))
 
 #################################################################################
-# Optimizer
+# 优化器
 # ---------
 # 
 # 在这个例子中，我们将使用简单的带有动量的 `随机梯度下降
@@ -310,7 +311,7 @@ for epoch in range(EPOCHS):
 # 
 # 请注意，如果你的模型有影响模型结构的构造参数，你需要提供这些参数，并将模型配置成与它被保存时相同的状态。
 # 
-# Other Resources
+# 其他资源
 # ---------------
 # 
 # -  在pytorch.org上的 `数据工具 <https://pytorch.org/docs/stable/data.html>`__的文档包括Dataset和DataLoader。
